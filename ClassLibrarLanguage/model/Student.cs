@@ -1,15 +1,22 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace ClassLibrarLanguage.model
 {
+    [DataContract]
     public class Student : IComparable<Student>, IComparable
     {
+        [DataMember]
         public ulong Id { get; set; }
+        [DataMember]
         public string Name { get; set; }
+        [DataMember]
         public string ForName { get; set; }
+        [DataMember]
         public string StudentNbr { get; set; }
-
+        [DataMember]
         public string Username { get; set; }
+        [DataMember]
         public string Password { get; set; }
 
         public Student()

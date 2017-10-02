@@ -4,14 +4,21 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using ClassLibrarLanguage.model;
 
 namespace ClassLibrarLanguage
 {
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "QuestionsService" in both code and config file together.
+    [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
     public class QuestionsService : IQuestionsService
     {
-        public void DoWork()
+
+        private Session _session;
+
+        public Session MakeSession(DateTime dateTime, Student student)
         {
+            _session = new Session(dateTime, student);
+
+            return _session;
         }
     }
 }

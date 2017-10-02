@@ -1,10 +1,17 @@
-﻿namespace ClassLibrarLanguage.model
+﻿using System.Runtime.Serialization;
+
+namespace ClassLibrarLanguage.model
 {
+    [DataContract]
     public class Question
     {
+        [DataMember]
         public ulong Id { get; set; }
+        [DataMember]
         public string Problem { get; set; }
+        [DataMember]
         public string Image { get; set; }
+        [DataMember]
         public string Awnser { get; set; }
 
 

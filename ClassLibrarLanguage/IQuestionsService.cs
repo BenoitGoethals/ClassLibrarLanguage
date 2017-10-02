@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using ClassLibrarLanguage.model;
 
 namespace ClassLibrarLanguage
 {
@@ -12,6 +13,6 @@ namespace ClassLibrarLanguage
     public interface IQuestionsService
     {
         [OperationContract]
-        void DoWork();
+        Session MakeSession(DateTime dateTime,Student student);
     }
 }

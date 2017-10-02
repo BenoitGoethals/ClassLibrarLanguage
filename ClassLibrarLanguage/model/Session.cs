@@ -2,13 +2,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
+using System.ServiceModel.Channels;
 
 namespace ClassLibrarLanguage.model
 {
+    [DataContract]
+    [KnownType(typeof(Student))]
+    [KnownType(typeof(Quest))]
     public class Session
     {
+        [DataMember]
         public ulong Id { get; set; }
+        [DataMember]
         public DateTime DateTime { get; set; }
+        [DataMember]
+        public Student Student { get; set; }
+        [DataMember]
+        private readonly IList<Quest> _quests = new List<Quest>();
 
         public Session(DateTime dateTime, Student student)
         {
@@ -17,9 +28,7 @@ namespace ClassLibrarLanguage.model
         }
 
 
-        public Student Student { get; set; }
-        private readonly IList<Quest> _quests=new List<Quest>();
-
+     
         public void Add(Quest quest)
         {
             _quests.Add(quest);

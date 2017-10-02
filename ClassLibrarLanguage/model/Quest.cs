@@ -1,11 +1,17 @@
 ﻿using System;
+using System.Runtime.Serialization;
 
 namespace ClassLibrarLanguage.model
 {
+    [DataContract]
+    [KnownType(typeof(Quest))]
     public class Quest : IComparable<Quest>, IComparable
     {
+        [DataMember]
         public ulong Id { get; set; }
+        [DataMember]
         public Question Question { get; set; }
+        [DataMember]
         public string Response { get; set; }
 
 

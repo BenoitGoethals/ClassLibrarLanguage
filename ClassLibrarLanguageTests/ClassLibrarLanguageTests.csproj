@@ -62,6 +62,7 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="helpers\LoaderTests.cs" />
     <Compile Include="model\SessionTests.cs" />
     <Compile Include="model\StudentTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

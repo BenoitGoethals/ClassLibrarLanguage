@@ -26,6 +26,10 @@ namespace ClassLibrarLanguage.model
             Response = response;
         }
 
+        public Quest()
+        {
+            
+
 
         public override string ToString()
         {

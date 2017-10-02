@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="helpers\ILoader.cs" />
+    <Compile Include="helpers\LoaderCsv.cs" />
     <Compile Include="helpers\QuestFactory.cs" />
     <Compile Include="IQuestionsService.cs" />
     <Compile Include="model\Quest.cs" />
@@ -58,6 +60,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <EmbeddedResource Include="resources\cv.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="resources\words1.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

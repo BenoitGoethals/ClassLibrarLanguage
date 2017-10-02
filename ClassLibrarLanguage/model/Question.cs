@@ -28,6 +28,10 @@ namespace ClassLibrarLanguage.model
             Image = image;
         }
 
+        public Question()
+        {
+        }
+
         protected bool Equals(Question other)
         {
             return Id == other.Id;

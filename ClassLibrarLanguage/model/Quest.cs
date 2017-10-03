@@ -28,7 +28,7 @@ namespace ClassLibrarLanguage.model
 
         public Quest()
         {
-            
+        }
 
 
         public override string ToString()

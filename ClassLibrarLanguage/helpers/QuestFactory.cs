@@ -12,7 +12,7 @@ namespace ClassLibrarLanguage.helpers
     public sealed class QuestFactory : IQuestFactory
     {
         private readonly Random _rnd=new Random();
-        private readonly ILoader _loader=new LoaderCsv();
+        private readonly ILoader _loader;
         private IList<Tuple<string, string>> _tuple;
 
         public Quest MakeQuest()

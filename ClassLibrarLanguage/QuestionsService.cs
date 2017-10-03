@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using ClassLibrarLanguage.helpers;
 using ClassLibrarLanguage.model;
 
 namespace ClassLibrarLanguage
@@ -11,6 +12,12 @@ namespace ClassLibrarLanguage
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
     public class QuestionsService : IQuestionsService
     {
+        public QuestionsService()
+        {
+            
+        }
+
+        private IQuestFactory QuestFactory;
 
         private Session _session;
 

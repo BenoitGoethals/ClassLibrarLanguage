@@ -7,9 +7,13 @@ using System.Net.Http.Headers;
 
 namespace ClassLibrarLanguage.helpers
 {
-    public sealed class LoaderCsv:ILoader
+    public  class LoaderCsv:ILoader
     {
-        
+
+        public LoaderCsv()
+        {
+        }
+
         public  IList<Tuple<string, string>> GetData(string file)
         {
             string[] lines = System.IO.File.ReadAllLines(file);

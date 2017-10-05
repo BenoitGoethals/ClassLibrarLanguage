@@ -12,14 +12,17 @@ namespace ClassLibrarLanguage
     [ServiceBehavior(InstanceContextMode = InstanceContextMode.PerSession)]
     public class QuestionsService : IQuestionsService
     {
-        public QuestionsService()
+
+        private IQuestFactory _questFactory;
+
+        public QuestionsService(IQuestFactory questFactory)
         {
-            
+            _questFactory = questFactory;
         }
 
-        private IQuestFactory QuestFactory;
-
         private Session _session;
+
+        public IQuestFactory QuestFactory { get => _questFactory; set => _questFactory = value; }
 
         public Session MakeSession(DateTime dateTime, Student student)
         {

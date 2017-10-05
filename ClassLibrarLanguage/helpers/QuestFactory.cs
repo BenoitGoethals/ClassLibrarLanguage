@@ -9,21 +9,27 @@ namespace ClassLibrarLanguage.helpers
         Quest MakeQuest();
     }
 
-    public sealed class QuestFactory : IQuestFactory
+    public  class QuestFactory : IQuestFactory
     {
         private readonly Random _rnd=new Random();
-        private readonly ILoader _loader;
-        private IList<Tuple<string, string>> _tuple;
+        private  ILoader _loader;
+        private IList<Tuple<string, string>> _tuple=new List<Tuple<string, string>>();
 
+      
         public Quest MakeQuest()
         {
            var quesTuple= _tuple[_rnd.Next(_tuple.Count)];
            return new Quest(){Question = new Question(){Problem = quesTuple.Item1,Awnser = quesTuple.Item2}};
         }
 
+        public QuestFactory(ILoader loader)
+        {
+            _loader = loader;
+            _tuple = _loader.GetData(@"d:/data/cv.csv");
+        }
+
         public QuestFactory()
         {
-            _tuple = _loader.GetData(@"d:/data/cv.csv");
         }
 
 

@@ -13,12 +13,18 @@ namespace ClassLibrarLanguage
         static void Main(string[] args)
         {
             ContainerBuilder builder = new ContainerBuilder();
+          
+            builder.RegisterInstance(new LoaderCsv()).As<ILoader>(); ;
+           builder.RegisterType<QuestFactory>().As<IQuestFactory>();
+         //   builder.RegisterType<QuestFactory>();
             builder.RegisterType<IQuestionsService>();
-            builder.RegisterType<LoaderCsv>().As<ILoader>();
-            builder.RegisterType<QuestFactory>().As<IQuestFactory>();
 
             using (var container = builder.Build())
             {
+
+
+             //   container.Resolve<IQuestFactory>().MakeQuest();
+
                 ServiceHost host = new ServiceHost(typeof(ClassLibrarLanguage.QuestionsService));
                 string address = "http://localhost:3888/IQuestionsService";
                 Binding binding = new BasicHttpBinding();

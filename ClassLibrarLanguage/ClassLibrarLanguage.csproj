@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>ClassLibrarLanguage.Program</StartupObject>
+    <StartupObject>Client.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Autofac, Version=4.6.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
@@ -143,6 +143,7 @@
     <Compile Include="model\Question.cs" />
     <Compile Include="model\Session.cs" />
     <Compile Include="model\Student.cs" />
+    <Compile Include="Prog2.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuestionsService.cs" />
